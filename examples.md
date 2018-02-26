@@ -11,3 +11,8 @@ curl -l -H 'Content-Type: application/json' -X GET http://localhost:3000/api/use
 curl -l -H 'Content-Type: application/json' -X PUT -d '{"uid": 7, "token": "http3ywzg2ltyl693alv9ii4nf0us4os", "info": {"university": "武汉大学","stu_num": "2015301500366"}}' http://localhost:3000/api/users/7
 
 curl -l -H 'Content-Type: application/json' -X POST -d '{"uid": 1,"token": "aszvwewr2weasa231sf2131dzv","content": "这里是回答","forum_id": 1}' http://localhost:3000/api/answers
+
+curl -l -H 'Content-Type: application/json' -X POST -d '{"uid": 7,"token": "aszvwewr2weasa231sf2131dzv","page_id": 3}' http://localhost:3000/api/favorites
+
+curl -l -H 'Content-Type: application/json' -X DELETE -d '{"uid": 7,"token": "aszvwewr2weasa231sf2131dzv","page_id": 3}' http://localhost:3000/api/favorites/a
+
