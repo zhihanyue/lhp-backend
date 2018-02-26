@@ -1,7 +1,5 @@
-# RESTful APIs
+# LHP Backend
 
-> Project Name: 掌上人文    
-> Base URL: 未部署    
 > ALL RESTful Resources: /users /tokens /swipers /pages{/activities /lectures /courses /subjects /questions} /forums /answers /favorites    
 > Author: 岳知涵    
 > Version: 1.10    
