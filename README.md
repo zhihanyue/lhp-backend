@@ -331,7 +331,7 @@ Favorite: id user_id page_id
 {
     "uid": 1, // 回复者uid
     "content": "这里是内容（如果需要富样式，可以考虑做个webview html读取）",
-    "last_answer_time": "2018-02-01 14:10:00",
+    "last_answer_at": "2018-02-01 14:10:00",
     "forum_id": 1
 }
 ```

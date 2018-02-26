@@ -5,13 +5,17 @@ const db = require(':db');
 
 module.exports = {
     async 'POST /api/answers'(ctx, next) {
-        let answer = await Answer.create(pick(ctx.request.body, ['content', 'forum_id']));
+        let obj = pick(ctx.request.body, ['content', 'forum_id']);
+        obj.user_id = ctx.request.body.uid;
+        let answer = await Answer.create(obj);
         ctx.rest({
             answer_id: answer.id
         });
     },
-    async 'POST /api/answers/:id'(ctx, next) {
+    async 'GET /api/answers/:id'(ctx, next) {
         let answer = await Answer.findById(ctx.params.id);
-        ctx.rest(pick(answer, ['user_id', 'content', 'last_answer_at', 'forum_id']));
+        let obj = pick(answer, ['user_id', 'content', 'last_answer_at', 'forum_id']);
+        obj.last_answer_at = answer.updated_at;
+        ctx.rest(obj);
     }
 };
