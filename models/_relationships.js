@@ -3,7 +3,7 @@ const fs = require('fs');
 let files = fs.readdirSync('models');
 let models = {};
 files.forEach((f) => {
-    if(!f.startsWith('_') && f.endsWith('.js')) {
+    if(!f.startsWith('_') && !f.startsWith('.') && f.endsWith('.js')) {
         let name = f.substring(0, f.length - 3);
         name = name.split('-').map((f) => {
             return f.substring(0, 1).toUpperCase() + f.substring(1).toLowerCase();
@@ -31,3 +31,5 @@ Answer.belongsTo(Forum);
 
 User.hasMany(Answer);
 Answer.belongsTo(User);
+
+module.exports = {models};

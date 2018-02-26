@@ -37,11 +37,7 @@ module.exports = {
         return sequelize.define(name, attrs, options);
     },
     dbSync: async() => {
-        if (process.env.NODE_ENV !== 'production') {
-            await sequelize.sync({ force: true });
-        } else {
-            throw new Error('Cannot sync() when NODE_ENV is set to \'production\'.');
-        }
+        await sequelize.sync({ force: true });
     },
     Op: Sequelize.Op,
     ... Sequelize.DataTypes
