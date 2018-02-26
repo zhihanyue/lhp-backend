@@ -17,7 +17,7 @@ Page: id type pv forum_id content
 -  Subject: page_id title img_s img_m date
 -  Question: page_id title weight
 Forum: id last_answer_time
--  Answer: id content last_answer_time forum_id
+-  Answer: id content last_answer_time forum_id user_id
 Favorite: id user_id page_id
 ```
 
