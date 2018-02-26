@@ -1,4 +1,5 @@
 const Page = require(':models/page');
+const pick = require('~/utils/obj-util').pick;
 const APIError = require('~/services/web/rest').APIError;
 const db = require(':db');
 
@@ -24,7 +25,24 @@ module.exports = {
         });
         ctx.rest({ results: pages });
     },
-    async 'GET /api/pages/:id(\\d)'(ctx, next) {
-        
+    async 'GET /api/pages/:id(\\d+)'(ctx, next) {
+        let page = await Page.findById(ctx.params.id);
+        if(!page)
+            throw new APIError('page:page_not_found', 'page not found by id');
+        let res = pick(page, ['type', 'pv', 'content']);
+        res.info = JSON.parse(page.info);
+        res.forum_id = page.forum_id || -1;
+        ctx.rest(res);
+        page.pv = page.pv + 1;
+        page.save();
+    },
+    async 'GET /api/pages/:id(\\d+)/basic'(ctx, next) {
+        let page = await Page.findById(ctx.params.id);
+        if(!page)
+            throw new APIError('page:page_not_found', 'page not found by id');
+        let res = pick(page, ['type', 'pv']);
+        res.info = JSON.parse(page.info);
+        res.forum_id = page.forum_id || -1;
+        ctx.rest(res);
     }
 };

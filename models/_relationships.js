@@ -26,3 +26,5 @@ Swiper.belongsTo(Page);
 User.belongsToMany(Page, {through: Favorite});
 Page.belongsToMany(User, {through: Favorite});
 
+Forum.hasOne(Page);
+Page.belongsTo(Forum);
