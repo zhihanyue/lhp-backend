@@ -171,7 +171,7 @@ Favorite: id user_id page_id
 
 // Response sample
 {
-    "results": [1,2,3,4,5,6,7,8,9,10] // page_id构成的列表
+    "results": [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},{id: 6},{id: 7},{id: 8},{id: 9},{id: 10}] // page_id构成的列表
 }
 ```
 
@@ -195,7 +195,7 @@ Favorite: id user_id page_id
 
 // Response sample
 {
-    "results": [1,2,3,4,5,6,7,8,9,10] // page_id构成的列表
+    "results": [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},{id: 6},{id: 7},{id: 8},{id: 9},{id: 10}] // page_id构成的列表
 }
 ```
 
@@ -347,7 +347,7 @@ Favorite: id user_id page_id
 
 // Response sample
 {
-    "results": [1,2,3,4] // a set of page_id
+    "results": [{id: 1},{id: 2},{id: 3},{id: 4}] // a set of page_id
 }
 ```
 
