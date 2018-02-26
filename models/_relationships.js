@@ -17,9 +17,6 @@ const {User, Token, Answer, Forum, Swiper, Page, Favorite} = models;
 User.hasMany(Token);
 Token.belongsTo(User);
 
-Forum.hasMany(Answer);
-Answer.belongsTo(Forum);
-
 Page.hasOne(Swiper);
 Swiper.belongsTo(Page);
 
@@ -28,3 +25,9 @@ Page.belongsToMany(User, {through: Favorite});
 
 Forum.hasOne(Page);
 Page.belongsTo(Forum);
+
+Forum.hasMany(Answer);
+Answer.belongsTo(Forum);
+
+User.hasMany(Answer);
+Answer.belongsTo(User);

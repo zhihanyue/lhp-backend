@@ -3,9 +3,10 @@ let Answer = db.model('answer', {
     content: db.TEXT
 }, {
     hooks: {
-        afterUpdate(answer, options) {
-            let forum = answer.getForum();
-            forum.lastAnswerAt = new Date();
+        async afterSave(answer, options) {
+            let forum = await answer.getForum();
+            forum.last_answer_at = new Date();
+            forum.save();
         }
     }
 });
