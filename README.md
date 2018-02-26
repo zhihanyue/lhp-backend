@@ -1,11 +1,11 @@
 # RESTful APIs
 
-> Project Name: 掌上人文
-> Base URL: 未部署
-> ALL RESTful Resources: /users /tokens /swipers /pages{/activities /lectures /courses /subjects /questions} /forums /answers /favorites
-> Author: 岳知涵
-> Version: 1.10
-> HTTP Response Code: use **200 for success** and **400 for failure**
+> Project Name: 掌上人文    
+> Base URL: 未部署    
+> ALL RESTful Resources: /users /tokens /swipers /pages{/activities /lectures /courses /subjects /questions} /forums /answers /favorites    
+> Author: 岳知涵    
+> Version: 1.10    
+> HTTP Response Code: use **200 for success** and **400 for failure**    
 
 ```
 User: id username password_digest email phonenum university stu_num role
