@@ -292,25 +292,28 @@ Favorite: id user_id page_id
 
 // Response sample
 {
-    "results": [1,2,3,4,5], // answer_id构成的列表
+    "results": [{"id":1},{"id":2},{"id":3},{"id":4},{"id":5}], // answer_id构成的列表
     "last_answer_time": "2018-02-01 14:10:00"
 }
 ```
 
 ## Create an answer
 
-`POST /answers/:id`
+`POST /answers`
 
 ```js
 // Request sample
 {
     "uid": 111,
     "token": "aszvwewr2weasa231sf2131dzv",
-    "content": "这里是回答"
+    "content": "这里是回答",
+    "forum_id": 1
 }
 
 // Response sample
-{}
+{
+    "answer_id": 7
+}
 ```
 
 ## Query an answer
@@ -328,11 +331,12 @@ Favorite: id user_id page_id
 {
     "uid": 1, // 回复者uid
     "content": "这里是内容（如果需要富样式，可以考虑做个webview html读取）",
-    "last_answer_time": "2018-02-01 14:10:00"
+    "last_answer_time": "2018-02-01 14:10:00",
+    "forum_id": 1
 }
 ```
 
-## Query favorites
+## Query favorites
 
 `GET /favorites`
 
